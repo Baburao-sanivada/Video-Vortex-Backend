@@ -42,7 +42,7 @@ class Medium{
 public class HomePageRecommendationsResponse{
     public String kind;
     public String etag;
-    public ArrayList<Item> items;
+    public ArrayList<VideoDetailsItem> items;
 }
 
 class Snippet{
