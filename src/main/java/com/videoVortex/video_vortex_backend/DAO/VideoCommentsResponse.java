@@ -33,6 +33,7 @@ class TopLevelCommentSnippet{
     public String authorDisplayName;
     public String authorProfileImageUrl;
     public String authorChannelUrl;
+    public String publishedAt;
     public AuthorChannelId authorChannelId;
 }
 
