@@ -25,7 +25,7 @@ public class SearchService {
                     .queryParam("part", "snippet")
                     .queryParam("q", searchItem)
                     .queryParam("maxResults", 25)
-                    .queryParam("key", "AIzaSyC9hgB4pfQxk9V2cZmvq2si_LTXpsIvu2Q");
+                    .queryParam("key", System.getenv("Youtube_API_Key"));
             String url = builder.toUriString();
             SearchResultsResponse response = restTemplate.getForObject(url, SearchResultsResponse.class);
             logger.info("API Response for search Results : "+response.kind);

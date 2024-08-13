@@ -25,7 +25,7 @@ public class GeminiService {
     @Autowired
     RestTemplate restTemplate;
 
-    private final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyCzvsNCZpaTurtLt2ka_ybEM6XTgBbqz7c";
+    private final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" +System.getenv("Gemini_API_Key");
 
     public List<String> getSearchSuggestions(String query) {
 

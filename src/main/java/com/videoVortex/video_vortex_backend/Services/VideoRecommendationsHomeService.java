@@ -26,7 +26,7 @@ public class VideoRecommendationsHomeService {
                     .queryParam("chart", "mostPopular")
                     .queryParam("maxResults", 50)
                     .queryParam("regionCode", "IN")
-                    .queryParam("key", "AIzaSyC9hgB4pfQxk9V2cZmvq2si_LTXpsIvu2Q");
+                    .queryParam("key", System.getenv("Youtube_API_Key"));
             String url = builder.toUriString();
             HomePageRecommendationsResponse response = restTemplate.getForObject(url, HomePageRecommendationsResponse.class);
             logger.info("API Response : "+response.kind);

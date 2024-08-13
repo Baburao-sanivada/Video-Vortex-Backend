@@ -22,7 +22,7 @@ public class VideoService {
             UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(baseUrl)
                     .queryParam("part", "snippet,contentDetails,statistics")
                     .queryParam("id", videoId)
-                    .queryParam("key", "AIzaSyC9hgB4pfQxk9V2cZmvq2si_LTXpsIvu2Q");
+                    .queryParam("key", System.getenv("Youtube_API_Key"));
             String url = builder.toUriString();
             VideoDetailsResponse response = restTemplate.getForObject(url, VideoDetailsResponse.class);
             logger.info("API Response for search Results : "+response.kind);
@@ -41,7 +41,7 @@ public class VideoService {
             UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(baseUrl)
                     .queryParam("part", "snippet,contentDetails,statistics")
                     .queryParam("id", channelId)
-                    .queryParam("key", "AIzaSyC9hgB4pfQxk9V2cZmvq2si_LTXpsIvu2Q");
+                    .queryParam("key", System.getenv("Youtube_API_Key"));
             String url = builder.toUriString();
             ChannelImageResponse response = restTemplate.getForObject(url, ChannelImageResponse.class);
             logger.info("API Response for Channel Image : "+response.kind);
@@ -62,7 +62,7 @@ public class VideoService {
                     .queryParam("channelId", channelId)
                     .queryParam("maxResults", 50)
                     .queryParam("regionCode", "IN")
-                    .queryParam("key", "AIzaSyC9hgB4pfQxk9V2cZmvq2si_LTXpsIvu2Q");
+                    .queryParam("key", System.getenv("Youtube_API_Key"));
             String url = builder.toUriString();
             VideoRecommendationsResponse response = restTemplate.getForObject(url, VideoRecommendationsResponse.class);
             logger.info("API Response for Channel Image : "+response.kind);
@@ -85,7 +85,7 @@ public class VideoService {
                     .queryParam("videoId", videoId)
                     .queryParam("maxResults", 100)
                     .queryParam("order", "relevance")
-                    .queryParam("key", "AIzaSyC9hgB4pfQxk9V2cZmvq2si_LTXpsIvu2Q");
+                    .queryParam("key", System.getenv("Youtube_API_Key"));
             String url = builder.toUriString();
             VideoCommentsResponse response = restTemplate.getForObject(url, VideoCommentsResponse.class);
             logger.info("API Response for Channel Image : "+response.kind);
